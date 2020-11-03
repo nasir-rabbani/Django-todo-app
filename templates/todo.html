@@ -1,0 +1,23 @@
+{% extends 'index.html' %} {% block content %}
+
+<h1 class="display-4">TODO Application</h1>
+<div class="row">
+  <div class="col">
+    <div class="display-4">Add Todo</div>
+    {% include 'form.html'%}
+  </div>
+  <div class="col">
+    <div class="display-4">Todo List</div>
+    {% if todos %}
+    <ul class="list-group">
+      {% for todo in todos %}
+      <li class="list-group-item">{{todo.date}} :: {{todo.name}}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <div>All caught up, nothing to do.</div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
